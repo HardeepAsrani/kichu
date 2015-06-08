@@ -67,3 +67,6 @@ Minor CSS changes to the menu icon.
 
 = 1.4.2.1 =
 Missed on translation, oops.
+
+= 1.4.2.2 = 
+Added Jetpack Infinite Scroll Support 
