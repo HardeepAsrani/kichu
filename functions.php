@@ -30,6 +30,11 @@ function kichu_setup() {
 	// Add post formats support. https://codex.wordpress.org/Post_Formats#Adding_Theme_Support
 	add_theme_support('post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ));
 
+	// Add Jetpack Infinite Scroll support. http://jetpack.me/support/infinite-scroll/ 
+	add_theme_support( 'infinite-scroll', array( 
+		'container' => 'content', 
+	) ); 
+
 	// This theme uses wp_nav_menu(). https://codex.wordpress.org/Function_Reference/register_nav_menu
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'kichu' ),
