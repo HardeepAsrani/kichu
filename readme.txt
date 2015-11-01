@@ -70,3 +70,8 @@ Missed on translation, oops.
 
 = 1.4.2.2 = 
 Added Jetpack Infinite Scroll Support 
+
+= 1.4.3 =
+Added donation link.
+Replaced 'include' with 'require' in functions.php file.
+Updated pot file.
