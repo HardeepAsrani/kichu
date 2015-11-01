@@ -5,8 +5,8 @@
  * Happy Blogging
 */
 
-include get_template_directory() . "/inc/customizer.php";
-include get_template_directory() . "/inc/post-formats.php";
+require get_template_directory() . "/inc/customizer.php";
+require get_template_directory() . "/inc/post-formats.php";
 
 function kichu_setup() {
 
