@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kichu\n"
-"POT-Creation-Date: 2015-05-01 04:05+0530\n"
-"PO-Revision-Date: 2015-05-014 04:05+0530\n"
+"POT-Creation-Date: 2015-11-02 03:50+0530\n"
+"PO-Revision-Date: 2015-11-02 03:50+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -40,21 +40,21 @@ msgstr ""
 #: content-aside.php:18 content-audio.php:18 content-chat.php:19
 #: content-gallery.php:18 content-image.php:18 content-link.php:18
 #: content-page.php:12 content-quote.php:18 content-status.php:13
-#: content-video.php:18 content.php:18
+#: content-video.php:18 content.php:23
 msgid "Pages:"
 msgstr ""
 
 #: content-aside.php:19 content-audio.php:19 content-chat.php:20
 #: content-gallery.php:19 content-image.php:19 content-link.php:19
 #: content-quote.php:19 content-status.php:15 content-video.php:19
-#: content.php:19
+#: content.php:24
 msgid "Categories:"
 msgstr ""
 
 #: content-aside.php:20 content-audio.php:20 content-chat.php:21
 #: content-gallery.php:20 content-image.php:20 content-link.php:20
 #: content-quote.php:20 content-status.php:16 content-video.php:20
-#: content.php:20
+#: content.php:25
 msgid "Tags: "
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Published by <a href=\"%2$s\">%1$s</a> on <time>%3$s</time>"
 msgstr ""
 
-#: content.php:28
+#: content.php:33
 #, php-format
 msgid ""
 "Published by <a href=\"%2$s\">%1$s</a> on <time>%3$s</time> | <a href=\"%4$s"
@@ -181,11 +181,11 @@ msgstr ""
 msgid " - Proudly powered by WordPress"
 msgstr ""
 
-#: functions.php:35 header.php:17
+#: functions.php:40 header.php:17
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:98
 msgid "Home"
 msgstr ""
 
@@ -193,91 +193,105 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:11
+#: inc/customizer.php:14
+#, php-format
+msgid ""
+"If you like this theme and if it helped you with your business then please "
+"consider supporting the development <a target=\"_blank\" href=\"http://www."
+"hardeepasrani.com/donate/\">by donating some money</a>. This theme is "
+"100% free and will always be. <a target=\"_blank\" href=\"http://www."
+"hardeepasrani.com/donate/\">Any amount, even $1.00, is appreciated :)</a>"
+msgstr ""
+
+#: inc/customizer.php:21
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:12
+#: inc/customizer.php:22
 msgid "This section allows you to customize colors and feel of the theme."
 msgstr ""
 
-#: inc/customizer.php:17
+#: inc/customizer.php:27
+msgid "Do You Like This Theme?"
+msgstr ""
+
+#: inc/customizer.php:32
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:23
+#: inc/customizer.php:38
 msgid "Primary Section"
 msgstr ""
 
-#: inc/customizer.php:29
+#: inc/customizer.php:44
 msgid "Secondary Section"
 msgstr ""
 
-#: inc/customizer.php:35
+#: inc/customizer.php:50
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:56
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:52 inc/customizer.php:156 inc/customizer.php:221
+#: inc/customizer.php:75 inc/customizer.php:179 inc/customizer.php:244
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:88
 msgid "Header Background"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:101
 msgid "Menu Title"
 msgstr ""
 
-#: inc/customizer.php:91
+#: inc/customizer.php:114
 msgid "Menu Title Background"
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:127
 msgid "Menu Background"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:140
 msgid "Menu Links"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:153
 msgid "Menu Links Hover"
 msgstr ""
 
-#: inc/customizer.php:143 inc/customizer.php:273 inc/customizer.php:312
+#: inc/customizer.php:166 inc/customizer.php:296 inc/customizer.php:335
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:169 inc/customizer.php:234
+#: inc/customizer.php:192 inc/customizer.php:257
 msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:182 inc/customizer.php:247
+#: inc/customizer.php:205 inc/customizer.php:270
 msgid "Link"
 msgstr ""
 
-#: inc/customizer.php:195 inc/customizer.php:260 inc/customizer.php:338
+#: inc/customizer.php:218 inc/customizer.php:283 inc/customizer.php:361
 msgid "Link Hover"
 msgstr ""
 
-#: inc/customizer.php:208
+#: inc/customizer.php:231
 msgid " Background"
 msgstr ""
 
-#: inc/customizer.php:286
+#: inc/customizer.php:309
 msgid "Links"
 msgstr ""
 
-#: inc/customizer.php:299
+#: inc/customizer.php:322
 msgid "Links Hover"
 msgstr ""
 
-#: inc/customizer.php:325
+#: inc/customizer.php:348
 msgid "Text/Link"
 msgstr ""
 

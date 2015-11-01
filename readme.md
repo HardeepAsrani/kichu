@@ -69,4 +69,9 @@ Minor CSS changes to the menu icon.
 Missed on translation, oops.
 
 = 1.4.2.2 = 
-Added Jetpack Infinite Scroll Support 
+Added Jetpack Infinite Scroll pot file.
+
+= 1.4.3 =
+Added donation link.
+Replaced 'include' with 'require' in functions.php file.
+Updated pot file.111

@@ -5,12 +5,27 @@
  
 function kichu_customize_register($wp_customize) {
 
+	function kichu_sanitize_text( $input ) {
+		return $input;
+	}
+
+	class Kichu_Support extends WP_Customize_Control {
+		public function render_content() {
+			echo __('If you like this theme and if it helped you with your business then please consider supporting the development <a target="_blank" href="http://www.hardeepasrani.com/donate/">by donating some money</a>. This theme is 100% free and will always be. <a target="_blank" href="http://www.hardeepasrani.com/donate/">Any amount, even $1.00, is appreciated :)</a>','kichu');
+		}
+	}
+	
 	$wp_customize->add_panel( 'colors_panel', array(
 		'priority'       => 40,
 		'capability'     => 'edit_theme_options',
 		'title'          => __('Colors', 'kichu'),
 		'description'    => __('This section allows you to customize colors and feel of the theme.', 'kichu'),
 	));
+
+    $wp_customize->add_section('donate_section', array(
+        'priority' => 5,
+        'title' => __('Do You Like This Theme?', 'kichu')
+    ));	
 
 	$wp_customize->add_section('header_colors_section', array(
 		'priority' => 5,
@@ -47,6 +62,14 @@ function kichu_customize_register($wp_customize) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability' => 'edit_theme_options'
 	));
+
+	$wp_customize->add_setting( 'donate_section_main', array(
+		'sanitize_callback' => 'kichu_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Kichu_Support( $wp_customize, 'donate_section_main', array(
+		'section' => 'donate_section',
+	)));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_title', array(
 		'label' => __('Title', 'kichu'),
