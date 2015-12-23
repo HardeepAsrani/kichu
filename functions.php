@@ -212,7 +212,8 @@ function kichu_customizer_head() {
 <?php if(!empty($kichu_secondary_title)) : ?>
 	article:nth-child(2n) a.title,
 	article:nth-child(2n) a.title:hover,
-	.comments-title, .comment-navigation .screen-reader-text,
+	.comments-title,
+	.comment-navigation .screen-reader-text,
 	.comment-navigation .nav-previous a,
 	.comment-navigation .nav-next a {
 		color: <?php echo esc_html($kichu_secondary_title); ?> ;

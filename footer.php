@@ -4,6 +4,6 @@
 		</div>
 	</footer>
 </div><!-- /#wrapper -->
-</body>
 <?php wp_footer(); ?>
+</body>
 </html>
