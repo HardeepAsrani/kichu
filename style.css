@@ -572,6 +572,7 @@ article a.title,article:nth-child(even) a {
 	-ms-transition: all .3s;
 	-o-transition: all .3s;
 	transition: all .3s;
+	cursor: pointer;
 }
 .nav-menu .smaller {
 	height: 75px;
