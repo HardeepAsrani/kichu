@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kichu\n"
-"POT-Creation-Date: 2015-11-02 03:50+0530\n"
-"PO-Revision-Date: 2015-11-02 03:50+0530\n"
+"POT-Creation-Date: 2015-12-24 05:08+0530\n"
+"PO-Revision-Date: 2015-12-24 05:08+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_x;_e\n"
+"X-Poedit-KeywordsList: __;_x;_e;esc_html_e;esc_html\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: comments.php:40
@@ -173,19 +173,17 @@ msgid ""
 "\">Permalink</a>"
 msgstr ""
 
-#: footer.php:3
-msgid "Kichu"
-msgstr ""
-
-#: footer.php:3
-msgid " - Proudly powered by WordPress"
-msgstr ""
-
-#: functions.php:40 header.php:17
+#: functions.php:43 header.php:17
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:96
+msgid ""
+"<span><a rel=\"nofollow\" href=\"http://www.hardeepasrani.com/portfolio/"
+"wordpress-themes/kichu/\"> Kichu </a> - Proudly powered by WordPress</span>"
+msgstr ""
+
+#: functions.php:105
 msgid "Home"
 msgstr ""
 
@@ -193,7 +191,54 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:14
+#: inc/admin/welcome-screen/content/content.php:9
+msgid "Kichu"
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:25
+msgid ""
+"<strong>Customizer Improvements:</strong> Customizer now uses postMessage "
+"method so you don't need to wait for the refresh to see your changes."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:26
+msgid ""
+"<strong>Welcome Panel:</strong> This version adds a Welcome Panel to the "
+"theme which tells you everything that you need to know about the theme."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:50
+msgid "Need support?"
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:51
+msgid ""
+"Found an issue with the theme? You can get support <a href=\"https://"
+"wordpress.org/support/theme/kichu\" target=\"_blank\">at this link</a>. Or "
+"would you like to translate Kichu into your language? <a href=\"https://"
+"translate.wordpress.org/projects/wp-themes/kichu\" target=\"_blank\">Get "
+"involved</a>! Also, don't forget to <a href=\"https://wordpress.org/support/"
+"view/theme-reviews/kichu\" target=\"_blank\">leave a review</a>."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:56
+msgid "Donate"
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:57
+msgid ""
+"If you like this theme and if it helped you with your business then please "
+"consider supporting the development <a target=\"_blank\" href=\"http://www."
+"hardeepasrani.com/donate/\">by donating some money</a>. <a target=\"_blank\" "
+"href=\"http://www.hardeepasrani.com/donate/\">Any amount, even $1.00, is "
+"appreciated :)</a>"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:24
+msgid "Get started with Kichu"
+msgstr ""
+
+#: inc/customizer.php:19
 #, php-format
 msgid ""
 "If you like this theme and if it helped you with your business then please "
@@ -203,95 +248,105 @@ msgid ""
 "hardeepasrani.com/donate/\">Any amount, even $1.00, is appreciated :)</a>"
 msgstr ""
 
-#: inc/customizer.php:21
+#: inc/customizer.php:25
+msgid ""
+"To edit footer credits, you need to purchase the $5 <a href=\"https://goo."
+"gl/49tvxD\" target=\"_blank\">Footer Credits Extension</a>."
+msgstr ""
+
+#: inc/customizer.php:35
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:22
+#: inc/customizer.php:36
 msgid "This section allows you to customize colors and feel of the theme."
 msgstr ""
 
-#: inc/customizer.php:27
+#: inc/customizer.php:41
 msgid "Do You Like This Theme?"
 msgstr ""
 
-#: inc/customizer.php:32
+#: inc/customizer.php:46
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:38
+#: inc/customizer.php:52
 msgid "Primary Section"
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:58
 msgid "Secondary Section"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:64
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:70
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:75 inc/customizer.php:179 inc/customizer.php:244
+#: inc/customizer.php:76
+msgid "Footer Credits"
+msgstr ""
+
+#: inc/customizer.php:87 inc/customizer.php:199 inc/customizer.php:269
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:101
 msgid "Header Background"
 msgstr ""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:115
 msgid "Menu Title"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:129
 msgid "Menu Title Background"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:143
 msgid "Menu Background"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:157
 msgid "Menu Links"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:171
 msgid "Menu Links Hover"
 msgstr ""
 
-#: inc/customizer.php:166 inc/customizer.php:296 inc/customizer.php:335
+#: inc/customizer.php:185 inc/customizer.php:325 inc/customizer.php:367
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:192 inc/customizer.php:257
+#: inc/customizer.php:213 inc/customizer.php:283
 msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:205 inc/customizer.php:270
+#: inc/customizer.php:227 inc/customizer.php:297
 msgid "Link"
 msgstr ""
 
-#: inc/customizer.php:218 inc/customizer.php:283 inc/customizer.php:361
+#: inc/customizer.php:241 inc/customizer.php:311 inc/customizer.php:395
 msgid "Link Hover"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:255
 msgid " Background"
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:339
 msgid "Links"
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:353
 msgid "Links Hover"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:381
 msgid "Text/Link"
 msgstr ""
 

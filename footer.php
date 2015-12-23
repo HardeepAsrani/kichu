@@ -1,6 +1,6 @@
 	<footer>
 		<div class="credits">
-			<span><a rel="nofollow" href="http://www.hardeepasrani.com/portfolio/wordpress-themes/kichu/"><?php _e( 'Kichu' , 'kichu' ); ?></a> <?php _e( ' - Proudly powered by WordPress' , 'kichu' ); ?></span>
+			<?php do_action('kichu_credits'); ?>
 		</div>
 	</footer>
 </div><!-- /#wrapper -->

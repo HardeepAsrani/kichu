@@ -7,6 +7,9 @@
 
 require get_template_directory() . "/inc/customizer.php";
 require get_template_directory() . "/inc/post-formats.php";
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
+}
 
 function kichu_setup() {
 
@@ -89,6 +92,10 @@ class Kichu_Walker_Menu extends Walker {
 
 }
 
+function kichu_footer_credits() {
+	echo __('<span><a rel="nofollow" href="http://www.hardeepasrani.com/portfolio/wordpress-themes/kichu/"> Kichu </a> - Proudly powered by WordPress</span>', 'kichu');
+}
+add_action( 'kichu_credits', 'kichu_footer_credits' );
 
 function kichu_new_setup() {
 
