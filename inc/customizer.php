@@ -2,6 +2,11 @@
 /*
  * Register colors and layout for the Theme Customizer.
 */
+
+function kichu_customizer_live_preview() {
+	wp_enqueue_script( 'kichu_customizer', get_template_directory_uri().'/assets/customizer.js', array( 'jquery','customize-preview' ), '', true );
+}
+add_action( 'customize_preview_init', 'kichu_customizer_live_preview' );
  
 function kichu_customize_register($wp_customize) {
 
@@ -14,6 +19,15 @@ function kichu_customize_register($wp_customize) {
 			echo __('If you like this theme and if it helped you with your business then please consider supporting the development <a target="_blank" href="http://www.hardeepasrani.com/donate/">by donating some money</a>. This theme is 100% free and will always be. <a target="_blank" href="http://www.hardeepasrani.com/donate/">Any amount, even $1.00, is appreciated :)</a>','kichu');
 		}
 	}
+
+	class Kichu_Footer_Extension extends WP_Customize_Control {
+		public function render_content() {
+			echo __('To edit footer credits, you need to purchase the $5 <a href="https://goo.gl/49tvxD" target="_blank">Footer Credits Extension</a>.','kichu');
+		}
+	}
+	
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	
 	$wp_customize->add_panel( 'colors_panel', array(
 		'priority'       => 40,
@@ -57,19 +71,17 @@ function kichu_customize_register($wp_customize) {
 		'panel'  => 'colors_panel'
 	));
 
+	$wp_customize->add_section('kichu_footer_credits', array(
+		'priority' => 45,
+		'title' => __('Footer Credits', 'kichu'),
+	));
+
 	$wp_customize->add_setting('kichu_title', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
-
-	$wp_customize->add_setting( 'donate_section_main', array(
-		'sanitize_callback' => 'kichu_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Kichu_Support( $wp_customize, 'donate_section_main', array(
-		'section' => 'donate_section',
-	)));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_title', array(
 		'label' => __('Title', 'kichu'),
@@ -81,7 +93,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_title_background', array(
 		'default' => '#0683C9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_title_background', array(
@@ -94,7 +107,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_menu_title', array(
 		'default' => '#AFDEFA',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_menu_title', array(
@@ -107,7 +121,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_menu_title_background', array(
 		'default' => '#0D77B6',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_menu_title_background', array(
@@ -120,7 +135,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_menu_background', array(
 		'default' => '#47A3DA',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_menu_background', array(
@@ -133,7 +149,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_menu_links', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_menu_links', array(
@@ -146,7 +163,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_menu_links_hover', array(
 		'default' => '#0683C9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_menu_links_hover', array(
@@ -159,7 +177,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_primary_background', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_primary_background', array(
@@ -172,7 +191,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_primary_title', array(
 		'default' => '#000',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_primary_title', array(
@@ -185,7 +205,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_primary_text', array(
 		'default' => '#505050',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_primary_text', array(
@@ -198,7 +219,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_primary_link', array(
 		'default' => '#3CB5F9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_primary_link', array(
@@ -211,7 +233,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_primary_link_hover', array(
 		'default' => '#0793E2',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_primary_link_hover', array(
@@ -224,7 +247,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_secondary_background', array(
 		'default' => '#3CB5F9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_secondary_background', array(
@@ -237,7 +261,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_secondary_title', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_secondary_title', array(
@@ -250,7 +275,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_secondary_text', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_secondary_text', array(
@@ -263,7 +289,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_secondary_link', array(
 		'default' => '#000',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_secondary_link', array(
@@ -276,7 +303,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_secondary_link_hover', array(
 		'default' => '#000',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_secondary_link_hover', array(
@@ -289,7 +317,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_pagination_background', array(
 		'default' => '#3CB5F9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_pagination_background', array(
@@ -302,7 +331,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_pagination_links', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_pagination_links', array(
@@ -315,7 +345,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_pagination_links_hover', array(
 		'default' => '#0683C9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_pagination_links_hover', array(
@@ -328,7 +359,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_footer_background', array(
 		'default' => '#0683C9',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_footer_background', array(
@@ -341,7 +373,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_footer_text', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_footer_text', array(
@@ -354,7 +387,8 @@ function kichu_customize_register($wp_customize) {
 	$wp_customize->add_setting('kichu_footer_link_hover', array(
 		'default' => '#FFF',
 		'sanitize_callback' => 'sanitize_hex_color',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'kichu_footer_link_hover', array(
@@ -362,6 +396,22 @@ function kichu_customize_register($wp_customize) {
 		'section' => 'footer_colors_section',
 		'priority' => 15, 
 		'settings' => 'kichu_footer_link_hover'
+	)));
+
+	$wp_customize->add_setting( 'donate_section_main', array(
+		'sanitize_callback' => 'kichu_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Kichu_Support( $wp_customize, 'donate_section_main', array(
+		'section' => 'donate_section',
+	)));
+
+	$wp_customize->add_setting( 'kichu_footer_credits_info', array(
+		'sanitize_callback' => 'kichu_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Kichu_Footer_Extension( $wp_customize, 'kichu_footer_credits_info', array(
+		'section' => 'kichu_footer_credits',
 	)));
 }
 add_action('customize_register', 'kichu_customize_register');
