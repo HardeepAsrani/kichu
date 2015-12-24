@@ -28,7 +28,7 @@ $kichu = wp_get_theme( 'kichu' );
 		</div>
 	</div>
 	<div class="col">
-		<?php if ( is_plugin_active( 'kichu-footer-extension/kichu-footer-extension.php' ) ) : ?>
+		<?php if ( is_plugin_active( 'kichu-footer-credits-extension/kichu-footer-credits-extension.php' ) ) : ?>
 			<div class="boxed downloaded">
 				<h2><?php printf( esc_html__( 'Footer Credits Extension', 'kichu' ) ); ?> <sup class="activated"><?php printf( esc_html__( 'Activated', 'kichu' ) ); ?></sup></h2>
 				<p><?php printf( esc_html__( 'Kichu Footer Extension allows you to edit the footer credits of your Kichu theme straight from the Customizer, without touching a line of code.', 'kichu' ) ); ?></p>
