@@ -74,8 +74,11 @@ Added Jetpack Infinite Scroll pot file.
 = 1.4.3 =
 Added donation link.
 Replaced 'include' with 'require' in functions.php file.
-Updated pot file.111
+Updated pot file.
 
 = 1.5 =
 Added Welcome Page.
 Now Customizer uses postMessage method.
+
+= 1.5.1 =
+Minor Changes.
